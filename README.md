@@ -15,6 +15,8 @@
 
 **1. Nacos 服务注册与发现**
 
+![Nacos 2.3.2](https://img.shields.io/badge/Nacos-2.3.2-red.svg)
+
 模块名称：`order-service`、`product-service`、`user-service`
 
 模块描述：  
