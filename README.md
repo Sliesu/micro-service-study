@@ -1,4 +1,4 @@
-<img src="doc/img/rbc-logo.png" style="width: 40%;margin-bottom: -60px" alt="RBC Logo"/>
+<img src="product-service/doc/img/rbc-logo.png" style="width: 40%;margin-bottom: -60px" alt="RBC Logo"/>
 
 
 ### Spring Cloud Alibaba 学习项目
