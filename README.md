@@ -23,3 +23,13 @@
 本模块学习如何使用 Spring Cloud Alibaba 集成 Nacos 进行服务注册与发现。Nacos 是一个易于使用的动态服务发现、配置管理与服务管理平台。在本模块中，学习如何使用 Nacos 将微服务注册到注册中心，并使用 RestTemplate 实现服务之间的调用。
 
 ------
+
+**2. OpenFeign 服务调用与Loadbalancer负载均衡**
+
+模块名称：`user-service`、`order-service`
+
+模块描述：  
+本模块介绍如何使用 OpenFeign 进行微服务间的调用。OpenFeign 是一个声明式 HTTP 客户端，通过注解定义 REST 接口，简化了服务调用。与 Spring Cloud 集成，支持 Nacos 和负载均衡，使用动态代理实现服务间的 HTTP 通信。  
+场景示例：`user-service` 调用 `order-service` 获取用户订单信息，通过 @FeignClient 注解定义服务接口，自动生成 HTTP 请求。
+
+------
