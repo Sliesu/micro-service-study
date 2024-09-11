@@ -1,0 +1,12 @@
+server:
+  port: ${user-service.port:8010}
+
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:7001
+        username: nacos
+        password: nacos
