@@ -9,17 +9,16 @@
         <version>1.0</version>
     </parent>
 
+    <artifactId>api-service</artifactId>
+
     <properties>
         <common-service.version>1.0</common-service.version>
     </properties>
 
-    <groupId>com.rbc</groupId>
-    <artifactId>api-service</artifactId>
-
     <dependencies>
-        <!-- service common -->
+        <!--common-service-->
         <dependency>
-            <groupId>com.rbc.cloud.common</groupId>
+            <groupId>com.rbc.cloud</groupId>
             <artifactId>common-service</artifactId>
             <version>1.0</version>
         </dependency>
@@ -30,11 +29,60 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- nacos -->
+        <!-- spring cloud alibaba nacos discovery -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
+        <!-- spring cloud openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!-- spring cloud loadbalancer -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <!-- mybatis plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+        </dependency>
+
+        <!-- mysql-connector-j -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+        </dependency>
+
+        <!-- mapstruct -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <!-- spring cloud alibaba nacos config -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!-- spring cloud bootstrap -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

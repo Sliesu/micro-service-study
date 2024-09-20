@@ -1,0 +1,40 @@
+spring:
+  #  数据源配置可以移至 Nacos 配置中心：common-service-dev.yml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/nacos?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=true
+    username: root
+    password: 123456
+  jackson:
+    default-property-inclusion: non_null
+  cloud:
+    openfeign:
+      client:
+        defaultConfig: fast
+        config:
+          default:
+            connectTimeout: ${spring.cloud.openfeign.client.config.default.connectTimeout}
+            readTimeout: ${spring.cloud.openfeign.client.config.default.readTimeout}
+          fast:
+            connectTimeout: ${spring.cloud.openfeign.client.config.fast.connectTimeout}
+            readTimeout: ${spring.cloud.openfeign.client.config.fast.readTimeout}
+      httpclient:
+        hc5.enabled: true
+        max-connections: ${spring.cloud.openfeign.httpclient.max-connections}
+        max-connections-per-route: ${spring.cloud.openfeign.httpclient.max-connections-per-route}
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-address}
+        username: ${nacos.username}
+        password: ${nacos.password}
+        metadata:
+          preserved:
+            heart:
+              beat:
+                interval: ${preserved.heart.beat.interval}
+                timeout: ${preserved.heart.beat.timeout}
+            ip:
+              delete:
+                timeout: ${preserved.ip.delete.timeout}
+mybatis-plus:
+  type-aliases-package: com.rbc.cloud.order.entity,com.rbc.cloud.product.entity,com.rbc.cloud.user.entity
