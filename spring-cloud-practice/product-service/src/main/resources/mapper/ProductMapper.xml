@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rbc.cloud.product.mapper.ProductMapper">
+
+    <resultMap id="BaseResultMap" type="ProductDO">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="productName" column="product_name" jdbcType="VARCHAR"/>
+        <result property="productDesc" column="product_desc" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="DECIMAL"/>
+        <result property="count" column="count" jdbcType="INTEGER"/>
+        <result property="specification" column="specification" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="BaseColumnList">
+        id,product_name,product_desc,price,count,specification
+    </sql>
+
+    <update id="deduct">
+        UPDATE t_product
+        SET count = count - #{count}
+        WHERE id = #{id}
+          AND count >= #{count}
+    </update>
+
+</mapper>

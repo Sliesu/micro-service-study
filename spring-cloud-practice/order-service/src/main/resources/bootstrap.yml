@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: order-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.server-address}
+        group: ${nacos.group}
+        file-extension: ${nacos.file-extension}

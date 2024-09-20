@@ -17,11 +17,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.rbc</groupId>
+            <groupId>com.rbc.cloud</groupId>
             <artifactId>api-service</artifactId>
             <version>1.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -29,8 +32,8 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.2.4</version>
             </plugin>
         </plugins>
     </build>
-
 </project>
