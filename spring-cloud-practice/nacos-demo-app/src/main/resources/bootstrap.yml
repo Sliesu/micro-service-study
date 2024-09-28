@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: nacos-demo-app
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:7001
+        file-extension: yaml
+        username: nacos
+        password: nacos

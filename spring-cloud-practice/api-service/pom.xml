@@ -83,6 +83,12 @@
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
         </dependency>
 
+
+        <!-- nacos-aes-encryption-plugin  解密-->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-aes-encryption-plugin</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

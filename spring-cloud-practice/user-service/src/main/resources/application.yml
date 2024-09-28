@@ -1,4 +1,4 @@
 server:
   port: ${user-service.port}
-jwt:
-  secret-key: 2ad5af5f-85cd-4423-b443-7a4ec30072f7
+#jwt:
+#  secret-key: 2ad5af5f-85cd-4423-b443-7a4ec30072f7

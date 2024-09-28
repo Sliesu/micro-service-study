@@ -82,7 +82,8 @@ public abstract class AbstractOrderService extends ServiceImpl<OrderMapper, Orde
         OrderDO orderDO = new OrderDO();
         orderDO.setUid(1);
         // 从配置中心读取
-        orderDO.setUsername(ssyProperties.getUsername() + ":" + ssyProperties.getSecretKey());
+        orderDO.setUsername(ssyProperties.getUsername());
+//        orderDO.setUsername(ssyProperties.getUsername() + ":" + ssyProperties.getSecretKey());
         orderDO.setProductId(productDTO.getId());
         orderDO.setProductName(productDTO.getProductName());
         orderDO.setPrice(productDTO.getPrice());

@@ -1,5 +1,2 @@
 server:
   port: ${order-service.port}
-ssy:
-  username: 松山院
-  site: www.ssy.top

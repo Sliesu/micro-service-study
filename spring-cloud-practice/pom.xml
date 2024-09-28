@@ -33,7 +33,12 @@
         <fastjson.version>1.2.75</fastjson.version>
         <spring-cloud-starter-bootstrap.version>3.1.4</spring-cloud-starter-bootstrap.version>
         <feign-hc5.version>13.0</feign-hc5.version>
+        <nacos-aes-encryption-plugin.version>1.0.0-SNAPSHOT</nacos-aes-encryption-plugin.version>
         <jjwt.version>0.11.5</jjwt.version>
+        <maven-repository>G:\tools\maven_jar</maven-repository>
+        <nacos-aes-encryption-plugin-path>
+            ${maven-repository}/com/alibaba/nacos/nacos-aes-encryption-plugin/1.0.0-SNAPSHOT/nacos-aes-encryption-plugin-1.0.0-SNAPSHOT.jar
+        </nacos-aes-encryption-plugin-path>
     </properties>
 
 
@@ -109,6 +114,15 @@
                 <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
                 <version>${jjwt.version}</version>
                 <scope>runtime</scope>
+            </dependency>
+
+            <!-- nacos-aes-encryption-plugin -->
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-aes-encryption-plugin</artifactId>
+                <version>${nacos-aes-encryption-plugin.version}</version>
+                <scope>system</scope>
+                <systemPath>${nacos-aes-encryption-plugin-path}</systemPath>
             </dependency>
         </dependencies>
     </dependencyManagement>
