@@ -33,3 +33,12 @@
 场景示例：`user-service` 调用 `order-service` 获取用户订单信息，通过 @FeignClient 注解定义服务接口，自动生成 HTTP 请求。
 
 ------
+
+3. Sentinel 服务容错与流量控制
+
+![Sentinel 1.8.6](https://img.shields.io/badge/Sentinel-1.8.6-red.svg)
+
+微服务：`order-service`
+
+模块描述：
+本模块学习如何使用 Sentinel 进行服务的容错和流量控制。Sentinel 是一个轻量级的流量控制组件，提供熔断、降级、流量控制等功能，以保障微服务的高可用性。在本模块中，学习如何通过 Sentinel 配置流量控制规则，包括限流、熔断策略和降级处理，确保在下游服务不稳定时，系统能够优雅地处理请求，并避免系统崩溃。通过集成 Sentinel 的实时监控功能，可以实时查看服务的调用情况及性能指标，优化服务之间的调用链。
