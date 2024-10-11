@@ -34,7 +34,7 @@
 
 ------
 
-3. Sentinel 服务容错与流量控制
+**3. Sentinel 服务容错与流量控制**
 
 ![Sentinel 1.8.6](https://img.shields.io/badge/Sentinel-1.8.6-red.svg)
 
