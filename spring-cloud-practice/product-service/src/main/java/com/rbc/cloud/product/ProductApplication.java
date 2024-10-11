@@ -1,6 +1,7 @@
 package com.rbc.cloud.product;
 
 import com.rbc.cloud.common.handler.FeignConfig;
+import com.rbc.cloud.common.handler.SentinelConfig;
 import com.rbc.cloud.common.mybatis.MyBatisConfig;
 import com.rbc.cloud.common.properties.SsyProperties;
 import org.mybatis.spring.annotation.MapperScan;
@@ -19,7 +20,7 @@ import org.springframework.context.annotation.Import;
 @SpringBootApplication
 @EnableFeignClients
 @EnableConfigurationProperties({SsyProperties.class})
-@Import({MyBatisConfig.class, FeignConfig.class})
+@Import({MyBatisConfig.class, FeignConfig.class, SentinelConfig.class})
 @MapperScan(basePackages = {"com.rbc.cloud.product.mapper"})
 public class ProductApplication {
     public static void main(String[] args) {

@@ -1,2 +1,11 @@
+spring:
+  application:
+    name: product-service                     # 应用名称，标识该 Spring Boot 应用
+  cloud:
+    sentinel:
+      transport:
+        port: ${sentinel.transport.port.product-service}  # Sentinel 传输端口，从外部配置读取（即在配置文件中定义的用户服务端口）
+        dashboard: ${sentinel.transport.dashboard}       # Sentinel 控制台地址，从外部配置读取
+
 server:
-  port: ${product-service.port}
+  port: ${product-service.port}                          # 应用运行的服务器端口，从外部配置读取（即在配置文件中定义的用户服务端口）

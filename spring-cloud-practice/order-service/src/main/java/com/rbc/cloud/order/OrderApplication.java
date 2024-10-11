@@ -1,6 +1,7 @@
 package com.rbc.cloud.order;
 
 import com.rbc.cloud.common.handler.FeignConfig;
+import com.rbc.cloud.common.handler.SentinelConfig;
 import com.rbc.cloud.common.mybatis.MyBatisConfig;
 import com.rbc.cloud.common.properties.SsyProperties;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 @EnableAspectJAutoProxy(exposeProxy = true)
 @EnableConfigurationProperties({SsyProperties.class})
-@Import({MyBatisConfig.class, FeignConfig.class})
+@Import({MyBatisConfig.class, FeignConfig.class, SentinelConfig.class})
 @MapperScan(basePackages = {"com.rbc.cloud.order.mapper"})
 @Slf4j
 public class OrderApplication {

@@ -1,4 +1,14 @@
+spring:
+  application:
+    name: user-service                      # 应用名称，标识该 Spring Boot 应用
+  cloud:
+    sentinel:
+      transport:
+        port: ${sentinel.transport.port.user-service}  # Sentinel 传输端口，从外部配置读取（即在配置文件中定义的用户服务端口）
+        dashboard: ${sentinel.transport.dashboard}       # Sentinel 控制台地址，从外部配置读取
+
 server:
-  port: ${user-service.port}
+  port: ${user-service.port}                          # 应用运行的服务器端口，从外部配置读取（即在配置文件中定义的用户服务端口）
+
 #jwt:
 #  secret-key: 2ad5af5f-85cd-4423-b443-7a4ec30072f7

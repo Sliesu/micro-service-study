@@ -9,10 +9,10 @@ spring:
         server-addr: ${nacos.server-address}
         group: ${nacos.group}
         file-extension: ${nacos.file-extension}
-        name: cipher-aes-product-service-${spring.profiles.active}.yaml
+        name: product-service-${spring.profiles.active}.yaml
         username: ${nacos.username}
         password: ${nacos.password}
         shared-configs:
-          - dataId: cipher-aes-common-service-${spring.profiles.active}.yaml
+          - dataId: common-service-${spring.profiles.active}.yaml
             group: ${nacos.group}
             refresh: true

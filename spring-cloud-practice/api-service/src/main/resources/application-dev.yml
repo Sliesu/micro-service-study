@@ -36,5 +36,26 @@ spring:
             ip:
               delete:
                 timeout: ${preserved.ip.delete.timeout}
+    sentinel:
+      datasource:
+        flow:
+          nacos:
+            server-addr: ${nacos.server-address}
+            username: ${nacos.username}
+            password: ${nacos.password}
+            group-id: ${sentinel.nacos.group-id}
+            rule-type: flow
+            data-id: ${spring.application.name}-flow-rules
+            data-type: json
+        degrade:
+          nacos:
+            server-addr: ${nacos.server-address}
+            username: ${nacos.username}
+            password: ${nacos.password}
+            group-id: ${sentinel.nacos.group-id}
+            rule-type: degrade
+            data-id: ${spring.application.name}-degrade-rules
+            data-type: json
+
 mybatis-plus:
   type-aliases-package: com.rbc.cloud.order.entity,com.rbc.cloud.product.entity,com.rbc.cloud.user.entity

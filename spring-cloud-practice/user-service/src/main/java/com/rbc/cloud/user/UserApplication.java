@@ -2,6 +2,7 @@ package com.rbc.cloud.user;
 
 
 import com.rbc.cloud.common.handler.FeignConfig;
+import com.rbc.cloud.common.handler.SentinelConfig;
 import com.rbc.cloud.common.mybatis.MyBatisConfig;
 import com.rbc.cloud.common.properties.JwtProperties;
 import com.rbc.cloud.common.properties.SsyProperties;
@@ -16,7 +17,7 @@ import org.springframework.context.annotation.Import;
  */
 @SpringBootApplication
 @EnableFeignClients
-@Import({MyBatisConfig.class, FeignConfig.class })
+@Import({MyBatisConfig.class, FeignConfig.class, SentinelConfig.class})
 @EnableConfigurationProperties({SsyProperties.class, JwtProperties.class})
 public class UserApplication {
     public static void main(String[] args) {
