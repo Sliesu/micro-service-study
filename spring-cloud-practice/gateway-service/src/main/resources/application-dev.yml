@@ -1,0 +1,42 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 启用网关的服务发现机制
+      routes:
+        - id: order_route # 路由的唯一标识
+          order: 1 # 路由匹配顺序，数字越小优先级越高
+          uri: lb://order-service # 路由匹配的地址，从 Nacos 按照微服务的名称获取
+          predicates: # 断言（谓词）
+            - Path=/order/service/** # 路由匹配的路径
+            - Method=POST # 只允许 POST 请求通过
+            - JDK=17 # (自定义谓词)只允许 JDK 17 版本通过
+#            - Between=2026-10-10T00:00:00.000+08:00,2026-10-11T00:00:00.000+08:00 # 在指定时间范围内允许路由
+#            - RemoteAddr=127.0.0.1/24 # 仅允许来自指定 IP 段的请求
+#            - RequestHeader=id,123456 # 请求头必须包含 id:123456
+          filters: # 过滤器
+            - StripPrefix=2 # 转发路由的时候，去掉前缀 2 层路径 /order/service
+            - InvalidParameter=token,-1 # 自定义过滤器
+
+        - id: orders_route
+          order: 2
+          uri: lb://order-service
+          predicates: # 断言(谓词)
+            - Path=/orders/{uid}
+          filters: # 过滤器
+            - StripPrefix=1
+    sentinel:
+      filter:
+        enabled: true # 启用过滤器
+      transport:
+        port: ${sentinel.transport.port.gateway-service} # Sentinel 传输端口
+        dashboard: ${sentinel.transport.dashboard} # Sentinel Dashboard 地址
+      scg:
+        fallback:
+          mode: response # fallback 模式
+          response-status: 500 # 响应状态码
+          response-body: '{"code": 500, "msg": "网关流量超量!"}' # 响应体
+
+
+

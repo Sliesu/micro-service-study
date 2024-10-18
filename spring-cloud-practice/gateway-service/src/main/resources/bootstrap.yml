@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: gateway-service # 设置服务名称
+
+  profiles:
+    active: dev # 指定使用的环境
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-address} # Nacos 服务地址，使用环境变量或配置文件中的占位符
+        username: ${nacos.username} # Nacos 登录用户名
+        password: ${nacos.password} # Nacos 登录密码

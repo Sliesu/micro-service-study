@@ -1,0 +1,17 @@
+server:
+  port: ${gateway-service.port}
+
+spring:
+  profiles:
+    active: dev # 指定使用的环境
+
+management:
+  endpoint:
+    gateway:
+      enabled: true # 启用网关端点
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info # 包括 info 端点
+          - gateway # 包括 gateway 端点
